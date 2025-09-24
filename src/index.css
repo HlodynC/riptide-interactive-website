@@ -1,0 +1,10 @@
+@import url('./assets/colors.css'); 
+
+html { scroll-behavior: smooth; }
+
+/* Make scroll targets land below your fixed navbar.
+   Adjust the 120px to match your actual navbar height. */
+.page-section { scroll-margin-top: 120px; }
+
+/* Optional: also let the Hero itself have some margin for Home */
+#home { scroll-margin-top: 120px; }

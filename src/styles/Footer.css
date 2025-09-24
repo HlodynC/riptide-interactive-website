@@ -1,0 +1,93 @@
+/* Footer.css */
+
+/* Overall footer styling */
+.footer {
+    background-color: var(--firefly); /* Dark background */
+    color: var(--iron);               /* White text */
+    padding: 20px 0;
+    font-family: var(--siteFont);
+    font-size: 18px;
+  }
+  
+  /* Container for alignment */
+  .footer-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Spreads items to far left & far right */
+    flex-wrap: wrap;               /* Wrap on smaller screens */
+    padding: 0 20px;
+  }
+  
+  /* Left Section: Logo or text logo */
+  .footer-left {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-logo {
+    max-height: 70px;
+  }
+
+  
+  /* Center Section */
+  .footer-center {
+    text-align: center;
+    flex: 1; /* Allows center to stretch */
+    margin-bottom: 10px;
+  }
+  
+  .footer-center-text {
+    margin: 5px 0;
+    font-weight: 500;
+  }
+  
+  .footer-links {
+    display: inline-flex; /* Keep links together in a row */
+    align-items: center;
+    gap: 8px; /* Space between items */
+  }
+  
+  .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  
+  .footer-links a:hover {
+    opacity: 0.8;
+  }
+  
+  .footer-separator {
+    color: #ccc;
+  }
+  
+  /* Right Section */
+  .footer-right {
+    text-align: right;
+    margin-bottom: 10px;
+    font-size: 18px;
+    line-height: 1.4;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  
+    .footer-right {
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,125 @@
+/* Accordion Gallery */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+
+.container .card {
+  flex: 1;
+  transition: all 1s ease-in-out;
+  height: 65vmin;
+  position: relative;
+}
+
+.container .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 1s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.container .card:hover img {
+  filter: grayscale(0);
+}
+
+/* Overlay container for title and description */
+.container .card .card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 18%;
+  background: rgba(0, 0, 0, 0.9);
+  color: var(--iron);
+  padding: 0.5em;
+  text-align: center;
+  /* Initially hidden below the card */
+  transform: translateY(100%);
+  transition: transform 0.5s ease-in-out 0.2s;
+  font-family: var(--siteFontAlt);
+}
+
+/* On hover, or if active, the overlay slides up */
+.container .card:hover .card__overlay,
+.container .card.active .card__overlay {
+  transform: translateY(0);
+}
+
+/* Title styling */
+.container .card .card__head {
+  font-family: var(--siteFont);
+  font-size: 2em;
+  font-weight: 800;
+  margin: 0;
+  margin-bottom: 5px;
+  color: var(--oranga);
+  transition: opacity 0.2s ease-in-out;
+  opacity: 0;
+}
+
+/* Description styling */
+.container .card .card__desc {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  font-size: 1em;
+  font-weight: 200;
+  max-width: 95%;
+  text-align: center;
+}
+
+/* When hovering or active, title and description fade in */
+.container .card:hover .card__head,
+.container .card.active .card__head {
+  opacity: 1;
+  transition-delay: 0.7s;
+}
+
+.container .card:hover .card__desc,
+.container .card.active .card__desc {
+  opacity: 1;
+  transition-delay: 1s;
+}
+
+/* Hover effect for flex growth */
+.container .card:hover {
+  flex-grow: 10;
+}
+
+/* Spacing between cards */
+.container .card:not(:nth-child(5)) {
+  margin-right: 0.5em;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    width: 95%;
+    margin: 1rem auto;
+  }
+  
+  .container .card {
+    width: 100%;
+    height: auto; /* Allow height to adjust based on content or use a fixed height if needed */
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  /* Optionally reduce overlay font sizes on mobile */
+  .container .card .card__head {
+    font-size: 1.5em;
+  }
+  
+  /* Hide description on mobile */
+  .container .card .card__desc {
+    display: none;
+  }
+}
