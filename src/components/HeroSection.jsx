@@ -64,7 +64,7 @@ const HeroSection = () => {
       <main className="main-content">
         <h1 className="main-heading">Explore the Worlds We Create</h1>
         <div className="button-group">
-          <button className="hero-button" onClick={() => go('contact')}>Contact</button>
+          <button className="hero-button" onClick={() => go('about')}>Contact</button>
           <button className="hero-button" onClick={() => go('projects')}>Projects</button>
         </div>
       </main>
